@@ -8,5 +8,6 @@ namespace LogBase.Core.EntityLayer
 {
     public interface IEntity
     {
+        int Id { get; set; }
     }
 }
