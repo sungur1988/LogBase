@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\LogBase.Entities.csproj" />
+    <ProjectReference Include="..\LogBase.Core\LogBase.Core.csproj" />
+  </ItemGroup>
+
 </Project>
