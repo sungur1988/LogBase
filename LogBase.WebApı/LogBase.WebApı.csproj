@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
@@ -12,6 +16,7 @@
     <ProjectReference Include="..\Entities\LogBase.Entities.csproj" />
     <ProjectReference Include="..\LogBase.Business\LogBase.Business.csproj" />
     <ProjectReference Include="..\LogBase.Core\LogBase.Core.csproj" />
+    <ProjectReference Include="..\LogBase.DataAccess\LogBase.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
