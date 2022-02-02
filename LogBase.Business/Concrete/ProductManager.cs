@@ -1,5 +1,7 @@
 ﻿using LogBase.Business.Abstract;
 using LogBase.Business.Constants;
+using LogBase.Business.ValidationRules.FluentValidation;
+using LogBase.Core.Aspects.Autofac.Validation;
 using LogBase.Core.Utilities.Results;
 using LogBase.DataAccess.Abstract;
 using LogBase.Entities.DatabaseEntities;
@@ -18,6 +20,7 @@ namespace LogBase.Business.Concrete
         {
             _productRepository = productRepository;
         }
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product entity)
         {
             _productRepository.Add(entity);
@@ -37,7 +40,7 @@ namespace LogBase.Business.Concrete
                 : _productRepository.GetList(x => x.CategoryId == CategoryId);
             return new SuccessDataResult<IEnumerable<Product>>(data, Messages.ProductListed);
         }
-
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Update(Product entity)
         {
             _productRepository.Update(entity);
