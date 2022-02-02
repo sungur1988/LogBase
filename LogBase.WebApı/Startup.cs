@@ -1,4 +1,9 @@
+using LogBase.Business.Abstract;
+using LogBase.Business.Concrete;
+using LogBase.Core.DataAccessLayer;
 using LogBase.DataAccess;
+using LogBase.DataAccess.Abstract;
+using LogBase.DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +37,9 @@ namespace LogBase.WebApı
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultSqlConnString"),opt=> { opt.MigrationsAssembly("LogBase.DataAccess"); });
             });
+
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
