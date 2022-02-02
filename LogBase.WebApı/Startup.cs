@@ -35,11 +35,11 @@ namespace LogBase.WebApı
         {
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultSqlConnString"),opt=> { opt.MigrationsAssembly("LogBase.DataAccess"); });
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultSqlConnString"), opt => { opt.MigrationsAssembly("LogBase.DataAccess"); });
             });
 
-            services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            //services.AddScoped<ICategoryService, CategoryManager>();
+            //services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
