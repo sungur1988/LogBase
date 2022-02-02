@@ -1,5 +1,7 @@
 ﻿using LogBase.Business.Abstract;
 using LogBase.Business.Constants;
+using LogBase.Business.ValidationRules.FluentValidation;
+using LogBase.Core.Aspects.Autofac.Validation;
 using LogBase.Core.Utilities.Results;
 using LogBase.DataAccess.Abstract;
 using LogBase.Entities.DatabaseEntities;
@@ -19,6 +21,7 @@ namespace LogBase.Business.Concrete
         {
             _categoryRepository = categoryRepository;
         }
+        [ValidationAspect(typeof(CategoryValidator))]
         public IResult Add(Category entity)
         {
             _categoryRepository.Add(entity);
