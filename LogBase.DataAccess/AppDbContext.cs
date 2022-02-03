@@ -31,8 +31,6 @@ namespace LogBase.DataAccess
         public DbSet<MovementType> MovementTypes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.Entity<ProductMovement>().Property(x => x.Id).UseIdentityColumn();
             modelBuilder.Entity<ProductMovement>().HasKey(x => x.Id);
         }
