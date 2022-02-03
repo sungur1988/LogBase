@@ -1,5 +1,4 @@
 ﻿using LogBase.Core.EntityLayer;
-using LogBase.Entities.BaseEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

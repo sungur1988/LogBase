@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogBase.Entities.BaseEntities
+namespace LogBase.Core.EntityLayer.Concrete.BaseEntities
 {
     public class BaseEntity : IEntity
     {
